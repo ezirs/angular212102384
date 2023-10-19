@@ -1,4 +1,4 @@
-<div class="login-box">
+<div class="login-box w-100">
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
@@ -24,7 +24,7 @@
             </div>
             <div class="row">
                 <div class="col-7">
-                    <div class="icheck-primary form-check">
+                    <div class="icheck-primary form-check d-flex align-items-center">
                         <input class="form-check-input" type="checkbox" id="remember">
                         <label class="form-check-label" for="remember">
                             Remember Me
@@ -33,7 +33,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-5">
-                    <button class="btn btn-primary btn-block" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Sign In</button>
+                    <button class="btn btn-primary btn-block" [routerLink]="['/admin']" routerLinkActive="router-link-active">Sign In</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -52,7 +52,7 @@
                 <a href="forgot-password.html">I forgot my password</a>
             </p>
             <p class="mb-0">
-                <a href="register.html" class="text-center">Register a new membership</a>
+                <a class="text-center" [routerLink]="['/register']" routerLinkActive="router-link-active">Register a new membership</a>
             </p>
         </div>
         <!-- /.card-body -->
