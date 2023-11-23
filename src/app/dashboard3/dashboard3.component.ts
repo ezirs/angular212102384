@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard3',
@@ -6,7 +6,6 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
   styleUrls: ['./dashboard3.component.css'],
 })
 export class Dashboard3Component implements OnInit {
-  title = 'Dashboard 3';
   constructor(private renderer: Renderer2) {
     const body = document.body;
     this.renderer.addClass(body, 'dark-mode');

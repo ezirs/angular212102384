@@ -62,7 +62,7 @@
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
-          <ul class="nav nav-treeview">
+          <ul class="nav nav-treeview {{ moduleName == 'dashboard' || moduleName == 'dashboard2' ? 'menu-open' : '' }}">
             <li class="nav-item">
               <a
                 [routerLink]="['/dashboard']"
@@ -86,7 +86,10 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="./index3.html" class="nav-link">
+              <a [routerLink]="['/dashboard3']"
+              routerLinkActive="route-link-active" class="nav-link {{
+                moduleName == 'dashboard3' ? 'active' : ''
+              }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard v3</p>
               </a>
@@ -94,11 +97,18 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="pages/widgets.html" class="nav-link">
+          <a [routerLink]="['/mahasiswa']" routerLinkActive="route-link-active" class="nav-link {{ moduleName == 'mahasiswa' ? 'active' : '' }}">
             <i class="nav-icon fas fa-th"></i>
             <p>
-              Widgets
-              <span class="right badge badge-danger">New</span>
+              Mahasiswa
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/mahasiswa" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+              Mahasiswa (Non-router)
             </p>
           </a>
         </li>
