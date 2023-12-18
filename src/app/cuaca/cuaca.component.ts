@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, AfterViewInit, Renderer2 } from '@angular/core';
 
 declare const $: any;
-declare const moment: any;
 
 @Component({
   selector: 'app-cuaca',
