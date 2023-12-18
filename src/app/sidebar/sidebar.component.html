@@ -121,6 +121,14 @@
           </a>
         </li>
         <li class="nav-item">
+          <a [routerLink]="['/cuaca']" routerLinkActive="route-link-active" class="nav-link {{ moduleName == 'cuaca' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-cloud-rain"></i>
+            <p>
+              Cuaca
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="#" class="nav-link" (click)="logOut()">
             <i class="nav-icon fas fa-th"></i>
             <p>
