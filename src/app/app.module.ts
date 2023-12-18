@@ -16,6 +16,7 @@ import { Dashboard3Component } from './dashboard3/dashboard3.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { MahasiswaComponent } from './mahasiswa/mahasiswa.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ForexComponent } from './forex/forex.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     Dashboard2Component,
     Dashboard3Component,
-    MahasiswaComponent
+    MahasiswaComponent,
+    ForexComponent
   ],
   imports: [
     BrowserModule,
