@@ -108,7 +108,7 @@ export class ForexComponent implements OnInit, AfterViewInit {
       // row = [10, 'SOS', sos2];
       // this._table1.row.add(row);
 
-      var currencies = ['SGD', 'BNB', 'HKD', 'BTC', 'AED', 'ALL', 'AMD', 'BTN', 'SOS'];
+      var currencies = ['SGD', 'BND', 'HKD', 'BTC', 'AED', 'ALL', 'AMD', 'BTN', 'SOS'];
       var rows = [];
 
       for (var i = 0; i < currencies.length; i++) {
