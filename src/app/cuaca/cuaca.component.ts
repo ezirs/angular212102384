@@ -11,6 +11,7 @@ declare const moment : any;
 })
 export class CuacaComponent implements OnInit, AfterViewInit {
   private table1: any;
+  datePipe: any;
 
   constructor(private renderer: Renderer2, private http: HttpClient) {}
 
@@ -25,7 +26,13 @@ export class CuacaComponent implements OnInit, AfterViewInit {
             'targets': 0,
             'render': function (data: string) {
               var d = new Date(data + ' UTC');
-              var html = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + '<br>' + d.getHours() + ':' + d.getMinutes() + ' WIB';
+              var year = d.getFullYear();
+              var month = (d.getMonth() + 1).toString().padStart(2, '0');
+              var day = d.getDate().toString().padStart(2, '0');
+              var hours = d.getHours().toString().padStart(2, '0');
+              var minutes = d.getMinutes().toString().padStart(2, '0');
+
+              var html = year + '-' + month + '-' + day + '<br>' + hours + ':' + minutes + ' WIB';
               return html;
             }
           },
@@ -50,6 +57,18 @@ export class CuacaComponent implements OnInit, AfterViewInit {
       }
     );
     this.bind_table1();
+  }
+
+  setSun(data: any): void {
+    var city = data.city;
+    $('#sunrise').html(this.convertTimestamp(city.sunrise));
+    $('#sunset').html(this.convertTimestamp(city.sunset));
+  }
+
+  convertTimestamp(timestamp: any): any {
+    var date = new Date(timestamp * 1000);
+    const formattedTime = date.toLocaleDateString('id-ID') + ' ' + date.toLocaleTimeString('id-ID');
+    return formattedTime;
   }
 
   bind_table1(): void {
@@ -90,6 +109,7 @@ export class CuacaComponent implements OnInit, AfterViewInit {
       });
 
       this.table1.draw(false);
+      this.setSun(data);
     });
   }
 
@@ -97,7 +117,6 @@ export class CuacaComponent implements OnInit, AfterViewInit {
     var celcius = kelvin - 273.15;
     celcius = Math.round(celcius * 100) / 100;
     return celcius;
-
   }
 
 
