@@ -9,7 +9,7 @@ export class RegisterComponent implements OnInit {
   constructor(private renderer: Renderer2) {
     this.renderer.addClass(document.body, "register-page");
     const body = document.body;
-    this.renderer.addClass(body, 'dark-mode');
+    this.renderer.removeClass(body, 'dark-mode');
   }
 
   ngOnInit(): void {
