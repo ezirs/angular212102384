@@ -1,6 +1,5 @@
 import { Component, Input, Renderer2 } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { Location } from '@angular/common';
 declare const $: any;
 
 @Component({
@@ -11,7 +10,8 @@ declare const $: any;
 export class SidebarComponent {
   @Input() moduleName: string = '';
   public user: any = sessionStorage.getItem('userId');
-  constructor(private router: Router, private renderer: Renderer2) {
+
+  constructor(private renderer: Renderer2, private location: Location) {
     const body = document.body;
     this.renderer.addClass(body, 'sidebar-mini');
     this.renderer.addClass(body, 'layout-fixed');
@@ -19,9 +19,8 @@ export class SidebarComponent {
     this.renderer.addClass(body, 'layout-footer-fixed');
   }
 
-
-  logOut(): void {
+  public logOut(): void {
     sessionStorage.removeItem('userId');
-    this.router.navigate(['/login']);
+    this.location.go('/login');
   }
 }
