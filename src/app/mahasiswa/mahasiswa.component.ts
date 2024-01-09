@@ -12,7 +12,10 @@ export class MahasiswaComponent implements OnInit, AfterViewInit {
   data: any;
   table1: any;
 
-  constructor (private http: HttpClient, private renderer: Renderer2) { }
+  constructor (private http: HttpClient, private renderer: Renderer2) {
+    const body = document.body;
+    this.renderer.addClass(body, 'dark-mode');
+  }
 
   ngAfterViewInit(): void {
     this.renderer.removeClass(document.body, 'sidebar-open');

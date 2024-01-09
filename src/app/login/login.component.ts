@@ -12,6 +12,8 @@ declare const $: any;
 export class LoginComponent implements OnInit {
     constructor(private renderer: Renderer2, private router: Router, private http: HttpClient) {
         this.renderer.addClass(document.body, "login-page");
+        const body = document.body;
+        this.renderer.removeClass(body, 'dark-mode');
     }
 
     ngOnInit(): void {

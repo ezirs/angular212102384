@@ -8,6 +8,8 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 export class RegisterComponent implements OnInit {
   constructor(private renderer: Renderer2) {
     this.renderer.addClass(document.body, "register-page");
+    const body = document.body;
+    this.renderer.addClass(body, 'dark-mode');
   }
 
   ngOnInit(): void {

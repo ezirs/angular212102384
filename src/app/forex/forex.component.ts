@@ -12,7 +12,10 @@ declare const $: any;
 export class ForexComponent implements OnInit, AfterViewInit {
   private _table1: any;
 
-  constructor(private renderer: Renderer2, private http: HttpClient) {}
+  constructor(private renderer: Renderer2, private http: HttpClient) {
+    const body = document.body;
+    this.renderer.addClass(body, 'dark-mode');
+  }
 
   ngAfterViewInit(): void {
     this.renderer.removeClass(document.body, 'sidebar-open');
