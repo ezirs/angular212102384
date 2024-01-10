@@ -10,17 +10,19 @@ import { MahasiswaComponent } from './mahasiswa/mahasiswa.component';
 import { otentikasiGuard } from './otentikasi.guard';
 import { ForexComponent } from './forex/forex.component';
 import { CuacaComponent } from './cuaca/cuaca.component';
+import { authGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: 'admin', component: AdminComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [otentikasiGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [otentikasiGuard] },
   { path: 'dashboard2', component: Dashboard2Component, canActivate: [otentikasiGuard] },
   { path: 'dashboard3', component: Dashboard3Component },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent, canActivate: [authGuard] },
+  { path: 'register', component: RegisterComponent, canActivate: [authGuard] },
   { path: 'mahasiswa', component: MahasiswaComponent, canActivate: [otentikasiGuard] },
   { path: 'forex', component: ForexComponent, canActivate: [otentikasiGuard] },
   { path: 'cuaca', component: CuacaComponent, canActivate: [otentikasiGuard] },
+  { path: 'logout', redirectTo: 'login'},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
 

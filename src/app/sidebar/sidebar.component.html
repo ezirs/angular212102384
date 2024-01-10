@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
+  <a href="#" class="brand-link">
     <img
       src="assets/dist/img/AdminLTELogo.png"
       alt="AdminLTE Logo"
@@ -23,7 +23,7 @@
         />
       </div>
       <div class="info">
-        <a href="#" class="d-block">{{ user }}</a>
+        <a href="#" class="d-block">{{ user ? user : 'ADMIN' }}</a>
       </div>
     </div>
 
@@ -54,7 +54,7 @@
       >
         <!-- Add icons to the links using the .nav-icon class
      with font-awesome or any other icon font library -->
-        <li class="nav-item menu-open">
+        <li class="nav-item {{ moduleName == 'dashboard' || moduleName == 'dashboard2' || moduleName == 'dashboard3' ? 'menu-open' : '' }}">
           <a href="#" class="nav-link {{ moduleName == 'dashboard' || moduleName == 'dashboard2' || moduleName == 'dashboard3' ? 'active' : '' }}">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
@@ -62,7 +62,7 @@
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
-          <ul id="menu_open" class="nav nav-treeview {{ moduleName == 'dashboard' || moduleName == 'dashboard2' || moduleName == 'dashboard3' ? 'menu-open' : '' }}">
+          <ul class="nav nav-treeview">
             <li class="nav-item">
               <a
                 [routerLink]="['/dashboard']"
@@ -129,7 +129,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" (click)="logOut()">
+          <a [routerLink]="['/logout']" class="nav-link" (click)="logOut()">
             <i class="nav-icon fas fa-th"></i>
             <p>
               Log Out
