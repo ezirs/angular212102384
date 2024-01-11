@@ -19,6 +19,23 @@ export class SidebarComponent {
   user: any = sessionStorage.getItem('userId');
 
   logOut(): void {
+    const body = document.body;
+
+    const currentHeight = getComputedStyle(body).height;
+
+    const classesToRemove = body.classList.value;
+    const classesArray = classesToRemove.split(' ');
+    classesArray.forEach(className => {
+      this.renderer.removeClass(body, className);
+    });
+    this.renderer.addClass(body, 'hold-transition');
+    this.renderer.addClass(body, 'login-page');
+
+    if (currentHeight) {
+      this.renderer.removeStyle(body, 'height');
+    }
     sessionStorage.removeItem('userId');
+
+    this.router.navigate(['/login']);
   }
 }

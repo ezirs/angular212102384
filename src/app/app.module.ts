@@ -18,6 +18,9 @@ import { MahasiswaComponent } from './mahasiswa/mahasiswa.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ForexComponent } from './forex/forex.component';
 import { CuacaComponent } from './cuaca/cuaca.component';
+import { NgChartsModule } from 'ng2-charts';
+
+
 
 
 @NgModule({
@@ -41,6 +44,7 @@ import { CuacaComponent } from './cuaca/cuaca.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgChartsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

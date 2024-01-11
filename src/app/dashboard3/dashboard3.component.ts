@@ -10,9 +10,6 @@ export class Dashboard3Component implements OnInit {
     const body = document.body;
     this.renderer.removeClass(body, 'dark-mode');
     this.renderer.addClass(body, 'sidebar-mini');
-    this.renderer.addClass(body, 'layout-fixed');
-    this.renderer.addClass(body, 'layout-navbar-fixed');
-    this.renderer.addClass(body, 'layout-footer-fixed');
   }
 
   ngOnInit(): void {}
